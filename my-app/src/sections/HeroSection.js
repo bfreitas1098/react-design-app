@@ -25,7 +25,9 @@ function HeroSection() {
             subtitle="120+ hours of video"
           />
         </TextWrapper>
-        <MockupAnimation />
+        <AnimationSection>
+          <MockupAnimation />
+        </AnimationSection>
       </ContentWrapper>
     </Wrapper>
   );
@@ -45,9 +47,19 @@ const Wrapper = styled.div`
 const ContentWrapper = styled.div`
   max-width: 1234px;
   padding: 200px 30px;
-  margin: 0 0 0 2px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 360px auto;
+
+  @media (max-width: 450px) {
+    grid-template-columns: auto;
+    padding: 150px 20px 250px;
+    gap: 60px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 0 0 -20px;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -66,6 +78,10 @@ const TextWrapper = styled.div`
       animation: ${animation} 1s 0.4s forwards;
     }
   }
+
+  @media (max-width: 450px) {
+    margin: 0 0 0 10px;
+  }
 `;
 
 const Title = styled(H1)`
@@ -83,6 +99,20 @@ const Title = styled(H1)`
     -webkit-background-clip: text;
     color: transparent;
   }
+
+  @media (max-width: 768px) {
+    font-size: 55px;
+  }
 `;
 
-const Description = styled(MediumText)``;
+const Description = styled(MediumText)`
+  @media (max-width: 768px) {
+    font-size: 17px;
+  }
+`;
+
+const AnimationSection = styled.div`
+  @media (min-width: 768px) and (max-width: 800px) {
+    margin: 0 0 0 -20px;
+  }
+`;

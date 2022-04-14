@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   position: relative;
   perspective: 5000;
   perspective-origin: top left;
+  transform: scale(0.8);
 
   div {
     transform: rotateY(-20deg) rotateX(20deg);
@@ -149,5 +150,14 @@ const Wrapper = styled.div`
     /* Note: backdrop-filter has minimal browser support */
 
     border-radius: 14px;
+  }
+
+  @media (max-width: 450px) {
+    transform: scale(0.4);
+    transform-origin: top left;
+  }
+  @media (max-width: 768px) {
+    transform: scale(0.5);
+    transform-origin: top left;
   }
 `;

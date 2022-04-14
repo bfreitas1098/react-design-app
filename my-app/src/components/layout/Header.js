@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { default as logo } from "../../images/logos/logo.svg";
+import { default as hamburger } from "../../images/icons/hamburger.svg";
 import { menuData } from "../../data/MenuData";
 import MenuButton from "../buttons/MenuButton";
 import MenuTooltip from "../../tooltips/MenuToolTip";
@@ -30,6 +31,9 @@ export default function Header() {
             <MenuButton key={index} item={item} />
           )
         )}
+        <HamburgerMenu>
+          <MenuButton item={{ title: "", icon: hamburger, link: "" }} />
+        </HamburgerMenu>
       </MenuWrapper>
       <MenuTooltip isOpen={isOpen} />
     </Wrapper>
@@ -45,12 +49,35 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   padding: 0 30px;
+
+  @media (max-width: 450px) {
+    top: 20px;
+    padding: 0 20px;
+  }
+  @media (max-width: 768px) {
+    top: 30px;
+  }
 `;
 
 const MenuWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(${(props) => props.count}, auto);
   gap: 30px;
+
+  @media (max-width: 768px) {
+    > a {
+      display: none;
+    }
+    grid-template-columns: auto;
+  }
 `;
 
 const Link = styled.a``;
+
+const HamburgerMenu = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;

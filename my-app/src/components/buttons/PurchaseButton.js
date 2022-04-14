@@ -40,6 +40,12 @@ const Wrapper = styled.div`
   gap: 20px;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
+  @media (min-width: 768px) and (max-width: 800px) {
+    height: 60px;
+    padding: 10px;
+    max-width: 250px;
+  }
+
   *,
   & {
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -70,6 +76,10 @@ const IconWrapper = styled.div`
   ${Wrapper}:hover & {
     filter: hue-rotate(10deg);
   }
+
+  @media (min-width: 768px) and (max-width: 800px) {
+    height: 40px;
+  }
 `;
 
 const Icon = styled.img`
@@ -84,6 +94,10 @@ const Ring = styled.img`
 
   ${Wrapper}:hover & {
     transform: rotate(30deg) scale(1.2) translate(1px, 1px);
+  }
+
+  @media (min-width: 768px) and (max-width: 800px) {
+    top: -17px;
   }
 `;
 
