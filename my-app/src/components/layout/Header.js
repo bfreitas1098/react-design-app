@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { default as logo } from "../../images/logos/logo.svg";
 import { menuData } from "../../data/MenuData";
@@ -6,17 +6,32 @@ import MenuButton from "../buttons/MenuButton";
 import MenuTooltip from "../../tooltips/MenuToolTip";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleClick(event) {
+    setIsOpen(!isOpen);
+    event.preventDefault();
+  }
+
   return (
     <Wrapper>
       <Link href="/">
         <img src={logo} alt="logo" />
       </Link>
       <MenuWrapper count={menuData.length}>
-        {menuData.map((item, index) => (
-          <MenuButton key={index} item={item} />
-        ))}
+        {menuData.map((item, index) =>
+          item.link === "/account" ? (
+            <MenuButton
+              key={index}
+              item={item}
+              onClick={(event) => handleClick(event)}
+            />
+          ) : (
+            <MenuButton key={index} item={item} />
+          )
+        )}
       </MenuWrapper>
-      <MenuTooltip />
+      <MenuTooltip isOpen={isOpen} />
     </Wrapper>
   );
 }
