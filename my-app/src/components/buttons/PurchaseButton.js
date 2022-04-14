@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Caption2, SmallText } from "../../components/styles/TextStyles";
+import { default as creditlogo } from "../../images/icons/credit.svg";
+import { default as ringicon } from "../../images/icons/icon-ring.svg";
 
 export default function PurchaseButton(props) {
   const { title, subtitle } = props;
@@ -8,8 +10,14 @@ export default function PurchaseButton(props) {
   return (
     <Link href="/">
       <Wrapper>
-        <Title>{title || "GET PRO ACCESS"}</Title>
-        <Subtitle>{subtitle || "$19 per month"}</Subtitle>
+        <IconWrapper>
+          <Icon src={creditlogo} />
+          <Ring src={ringicon} />
+        </IconWrapper>
+        <TextWrapper>
+          <Title>{title || "GET PRO ACCESS"}</Title>
+          <Subtitle>{subtitle || "$19 per month"}</Subtitle>
+        </TextWrapper>
       </Wrapper>
     </Link>
   );
@@ -25,6 +33,38 @@ const Wrapper = styled.div`
     inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   border: 0px;
+  display: grid;
+  grid-template-columns: 53px auto;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+`;
+
+const IconWrapper = styled.div`
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  border-radius: 50%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+`;
+
+const Icon = styled.img`
+  width: 29px;
+  height: 29px;
+`;
+
+const Ring = styled.img`
+  position: absolute;
+  top: -15px;
+  left: -16px;
+`;
+
+const TextWrapper = styled.div`
+  display: grid;
+  gap: 4px;
 `;
 
 const Title = styled(Caption2)`
