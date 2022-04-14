@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { H1, MediumText } from "../components/styles/TextStyles";
 import { themes } from "../components/styles/ColorStyles";
 import PurchaseButton from "../components/buttons/PurchaseButton";
+import MockupAnimation from "../components/animations/MockupAnimation";
 
 function HeroSection() {
   return (
@@ -22,6 +23,7 @@ function HeroSection() {
             subtitle="120+ hours of video"
           />
         </TextWrapper>
+        <MockupAnimation />
       </ContentWrapper>
     </Wrapper>
   );
@@ -31,12 +33,15 @@ export default HeroSection;
 
 const Wrapper = styled.div`
   background: linear-gradient(180deg, #4316db 0%, #9076e7 100%);
+  overflow: hidden;
 `;
 
 const ContentWrapper = styled.div`
   max-width: 1234px;
   padding: 200px 30px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px auto;
 `;
 
 const TextWrapper = styled.div`
