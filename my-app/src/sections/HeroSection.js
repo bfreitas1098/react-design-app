@@ -1,7 +1,7 @@
-import "./App.css";
-import { default as logo } from "./images/logos/logo.svg";
+import React from "react";
+import { default as logo } from "../images/logos/logo.svg";
 
-function App() {
+function HeroSection() {
   return (
     <>
       <img src={logo} alt="logo" />
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default HeroSection;
