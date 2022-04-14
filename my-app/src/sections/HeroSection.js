@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { H1, MediumText } from "../components/styles/TextStyles";
 import { themes } from "../components/styles/ColorStyles";
+import PurchaseButton from "../components/buttons/PurchaseButton";
 
 function HeroSection() {
   return (
@@ -16,6 +17,10 @@ function HeroSection() {
             Don’t skip design. Learn design and code by building real apps with
             React and Swift. Complete courses about the best tools.
           </Description>
+          <PurchaseButton
+            title="START LEARNING"
+            subtitle="120+ hours of video"
+          />
         </TextWrapper>
       </ContentWrapper>
     </Wrapper>
