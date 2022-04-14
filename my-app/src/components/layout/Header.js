@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { default as logo } from "../../images/logos/logo.svg";
 import { menuData } from "../../data/MenuData";
 import MenuButton from "../buttons/MenuButton";
+import MenuTooltip from "../../tooltips/MenuToolTip";
 
 export default function Header() {
   return (
@@ -15,6 +16,7 @@ export default function Header() {
           <MenuButton key={index} item={item} />
         ))}
       </MenuWrapper>
+      <MenuTooltip />
     </Wrapper>
   );
 }
