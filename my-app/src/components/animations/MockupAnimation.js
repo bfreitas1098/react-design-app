@@ -153,7 +153,7 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 450px) {
-    transform: scale(0.4);
+    transform: scale(0.4) !important;
     transform-origin: top left;
   }
   @media (max-width: 768px) {

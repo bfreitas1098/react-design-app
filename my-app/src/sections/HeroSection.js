@@ -47,7 +47,7 @@ const Wrapper = styled.div`
 const ContentWrapper = styled.div`
   max-width: 1234px;
   padding: 200px 30px;
-  margin: 0 auto;
+  margin: 0 auto 35px;
   display: grid;
   grid-template-columns: 360px auto;
 
@@ -55,10 +55,11 @@ const ContentWrapper = styled.div`
     grid-template-columns: auto;
     padding: 150px 20px 250px;
     gap: 60px;
+    margin: 0 0 70px -20px;
   }
 
   @media (max-width: 768px) {
-    margin: 0 0 0 -20px;
+    margin: 0 0 180px -20px;
   }
 `;
 
